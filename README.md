@@ -3,13 +3,18 @@
 A small Clojure library designed to parse [dBASE](https://de.wikipedia.org/wiki/DBASE)
 files. At the moment only Version 3 is supported. 
 
-![](https://clojars.org/clj-dbase/latest-version.svg)
-
 dBASE file are some sort of legacy table format used by some telecommunication
 providers to provide billing informations. It consists out of a binary
 header which starts with some metadata and afterwards the field descriptions.
 The main part are records in almost plain text. 
 More informations can be found [here](http://www.independent-software.com/dbase-dbf-dbt-file-format.html) and [here](https://github.com/henck/dBASE.NET/tree/master/dBASE.NET).
+
+## Installation
+
+Add `[clj-dbase "0.1.0"]` to your project or check [clojars](https://clojars.org/clj-dbase)
+for a more current version.
+
+![](https://clojars.org/clj-dbase/latest-version.svg)
 
 ## Usage
 
