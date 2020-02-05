@@ -12,8 +12,46 @@ More informations can be found [here](http://www.independent-software.com/dbase-
 
 ## Usage
 
+The main entry point is the `(parse-dbase-file input-file)` function.
 
+```
+(def dbase-data (parse-dbase-file (clojure.java.io/file input-file)))
+```
 
+The returned data is a nested map:
+```
+{:header <meta informations>
+ :fields <record field definitions>
+ :records <the actual table data>}
+```
+The header has the following layout:
+```
+{:dbf-version <n>
+ :last-update <java date>
+ :num-records <n>
+ :header-length <n in bytes>
+ :record-length <n in bytes>}
+```
+
+The field layout is defined as:
+```
+{:name <string>
+ :type <char>
+ :length <byte>
+ :precision <byte>
+ :work-area-id <byte>
+ :flags <byte>}
+```
+
+Additionally, the field definition can be attatched to the record data.
+
+```
+(-> (java.io.file. input-file)
+    (parse-dbase-file)
+    (field-definition->records))
+```
+This results in the field name is also attached to the individual record
+for easier handling and post-processing.
 
 ## License
 
