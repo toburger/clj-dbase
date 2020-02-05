@@ -3,6 +3,7 @@
 A small Clojure library designed to parse [dBASE](https://de.wikipedia.org/wiki/DBASE)
 files. At the moment only Version 3 is supported. 
 
+![](https://clojars.org/clj-dbase/latest-version.svg)
 
 dBASE file are some sort of legacy table format used by some telecommunication
 providers to provide billing informations. It consists out of a binary
